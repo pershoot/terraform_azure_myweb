@@ -117,7 +117,7 @@ resource "azurerm_virtual_machine" "myweb" {
   os_profile {
       computer_name  = var.prefix
       admin_username = "ubuntu"
-      custom_data    = data.template_file.init_script.rendered
+      custom_data    = file("scripts/install.sh")
     }
 
   os_profile_linux_config {
